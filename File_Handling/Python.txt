@@ -1,0 +1,2 @@
+print("Hello, Python!")
+# This file contains a simple message ready for Python to read.
