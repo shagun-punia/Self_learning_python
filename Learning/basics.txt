@@ -1,0 +1,54 @@
+__init__() constructor
+--------------------------
+runs automatically whenever an aobject is created.
+used to initialize attributes.
+example: class Students:
+           def __init__(self,name)
+               self.name=name
+        s1=Student('ram')
+        print(s1.name)
+
+4 pillars of OOP (easy English)
+--------------------------------
+1. Encapsulation — Keep data and the code that changes it together, and hide details you don't want others to access.
+   Example: a class with private attributes and methods to get or set them safely.
+   class BankAccount:
+       def __init__(self, balance):
+           self.__balance = balance  # hidden
+       def deposit(self, amount):
+           if amount > 0:
+               self.__balance += amount
+       def get_balance(self):
+           return self.__balance
+
+2. Abstraction — Show only the important features and hide complexity.
+   Example: you use a function to get area of a shape without needing how it's calculated.
+   class Shape:
+       def area(self):
+           raise NotImplementedError
+   class Square(Shape):
+       def __init__(self, side):
+           self.side = side
+       def area(self):
+           return self.side * self.side
+
+3. Inheritance — Create a new class using code from an existing class.
+   Example: a Dog class can inherit from Animal and reuse or change behavior.
+   class Animal:
+       def speak(self):
+           return 'some sound'
+   class Dog(Animal):
+       def speak(self):
+           return 'Bark'
+
+4. Polymorphism — Different objects can be used in the same way (same method name) and act differently.
+   Example: different classes implement the same method and you can call it without checking the type.
+   class Cat:
+       def sound(self):
+           return 'Meow'
+   class Bird:
+       def sound(self):
+           return 'Chirp'
+   for pet in [Cat(), Bird()]:
+       print(pet.sound())
+    
